@@ -31,5 +31,25 @@ pipeline {
                 }
             }
         }
+        stage("Nexus"){
+            steps {
+                nexusArtifactUploader artifacts:
+                [[
+                    artifactId: 'my-app', 
+                    classifier: '', 
+                    file: 'target/my-app-2.0-SNAPSHOT.jar', 
+                    type: 'jar'
+                ]], 
+
+                credentialsId: 'nexus_credentials', 
+                groupId: 'com.mycompany.app', 
+                nexusUrl: 'http://localhost:8081/', 
+                nexusVersion: 'nexus2', 
+                protocol: 'http', 
+                repository: 'jenkins_maven_snapshot', 
+                version: '2.0-SNAPSHOT'
+
+            }
+        }
     }
 }
