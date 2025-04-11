@@ -46,7 +46,7 @@ pipeline {
                 nexusUrl: 'localhost:8081', 
                 nexusVersion: 'nexus3', 
                 protocol: 'http', 
-                repository: 'maven-snapshots', 
+                repository: 'maven-releases', 
                 version: '2.0'
 
             }
