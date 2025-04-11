@@ -44,7 +44,7 @@ pipeline {
                 credentialsId: 'nexus_credentials', 
                 groupId: 'com.mycompany.app', 
                 nexusUrl: 'localhost:8081', 
-                nexusVersion: 'nexus2', 
+                nexusVersion: 'nexus3', 
                 protocol: 'http', 
                 repository: 'maven-snapshots', 
                 version: '2.0-SNAPSHOT'
