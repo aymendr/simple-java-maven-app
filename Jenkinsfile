@@ -43,10 +43,10 @@ pipeline {
 
                 credentialsId: 'nexus_credentials', 
                 groupId: 'com.mycompany.app', 
-                nexusUrl: 'http://localhost:8081/', 
+                nexusUrl: 'localhost:8081', 
                 nexusVersion: 'nexus2', 
                 protocol: 'http', 
-                repository: 'jenkins_maven_snapshot', 
+                repository: 'maven-snapshots', 
                 version: '2.0-SNAPSHOT'
 
             }
