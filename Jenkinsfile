@@ -37,7 +37,7 @@ pipeline {
                 [[
                     artifactId: 'my-app', 
                     classifier: '', 
-                    file: 'target/my-app-2.0-SNAPSHOT.jar', 
+                    file: 'target/my-app-2.0.jar', 
                     type: 'jar'
                 ]], 
 
@@ -47,7 +47,7 @@ pipeline {
                 nexusVersion: 'nexus3', 
                 protocol: 'http', 
                 repository: 'maven-snapshots', 
-                version: '2.0-SNAPSHOT'
+                version: '2.0'
 
             }
         }
