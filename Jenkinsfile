@@ -20,12 +20,23 @@ pipeline {
                 // bat "mvn -Dmaven.test.failure.ignore=true clean package"
             }
         }
-        stage('Test') {
-            steps {
-                bat 'echo Testing...'
-                // Run Maven on a Unix agent.
-                bat "mvn test"
-            }
+        stage('Run Tests') {
+            parallel{
+                stage("Test on windows"){
+                    steps {
+                        bat 'echo Testing on windows'
+                        // Run Maven on a Unix agent.
+                        bat "mvn test"
+                    }
+                }
+                stage("Test on Linux"){
+                    steps {
+                        bat 'echo Testing on linux'
+                        // Run Maven on a Unix agent.
+                        // bat "mvn test"
+                    }
+                }   
+            }             
         }
         stage('Packaging') {
             steps {
